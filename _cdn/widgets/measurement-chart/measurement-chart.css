@@ -1,0 +1,858 @@
+/*
+measurement chart
+*/
+.measurement-chart {
+    display: none;
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -moz-flex-pack: center;
+    -ms-justify-content: center;
+    -ms-flex-pack: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    -o-align-items: center;
+    align-items: center;
+    width: 100vw;
+    height: calc(100vh - 96px);
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+}
+
+/* measurement chart => content */
+.measurement-chart__content {
+    display: none;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    width: 98%;
+    height: 98%;
+    max-width: 1000px;
+    background-color: #ffffff;
+}
+
+/* measurement chart => content => header */
+.measurement-chart__content__header {
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-justify-content: space-between;
+    -webkit-box-pack: space-between;
+    -moz-justify-content: space-between;
+    -moz-flex-pack: space-between;
+    -ms-justify-content: space-between;
+    -ms-flex-pack: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between;
+
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    -o-align-items: center;
+    align-items: center;
+
+    padding: 5px 10px;
+    border-bottom: 1px solid #c9d3dd;
+}
+
+.measurement-chart__content__header__logo {
+    width: 100px;
+}
+
+.measurement-chart__content__header__close {
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -moz-flex-pack: center;
+    -ms-justify-content: center;
+    -ms-flex-pack: center;
+    -o-justify-content: center;
+    justify-content: center;
+
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    -o-align-items: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+    background-color: #f4f5f8;
+    -webkit-transition: background-color 0.2s ease-in-out;
+    -moz-transition: background-color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out;
+    -o-transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.measurement-chart__content__header__close:hover {
+    background-color: #d1d7db;
+}
+
+.measurement-chart__content__header__close i {
+    font-size: 1.5em;
+    color: #333c4e;
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+}
+
+.measurement-chart__content__header__close:hover i {
+    color: #ffffff;
+}
+
+/* measurement chart => content => body */
+.measurement-chart__content__body {
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    -o-flex: 1;
+    flex: 1;
+
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    padding: 1px 10px;
+}
+
+.measurement-chart__content__body__image {
+    display: none;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.measurement-chart__content__body__image__cover {
+    position: absolute;
+    right: -50%;
+    left: -50%;
+    height: 100%;
+    max-width: 445px;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.measurement-chart__content__body__image__chest,
+.measurement-chart__content__body__image__waist,
+.measurement-chart__content__body__image__hip,
+.measurement-chart__content__body__image__thigh {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.measurement-chart__content__body__image__chest img,
+.measurement-chart__content__body__image__waist img,
+.measurement-chart__content__body__image__hip img,
+.measurement-chart__content__body__image__thigh img{
+    object-fit: contain;
+}
+
+.measurement-chart__content__body__image__chest p,
+.measurement-chart__content__body__image__waist p,
+.measurement-chart__content__body__image__hip p,
+.measurement-chart__content__body__image__thigh p {
+    position: absolute;
+    bottom: 0;
+    font-size: 0.8em;
+    color: #eeeeee;
+    padding: 10px;
+    background-color: #222A33;
+    opacity: 0.8;
+}
+
+.measurement-chart__content__body__table {
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -moz-flex-pack: center;
+    -ms-justify-content: center;
+    -ms-flex-pack: center;
+    -o-justify-content: center;
+    justify-content: center;
+
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    -o-align-items: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.measurement-chart__content__body__table__title {
+    font-size: 0.875em;
+    color: #222a33;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.measurement-chart__content__body__table table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+.measurement-chart__content__body__table table thead th {
+    font-size: 0.625em;
+    color: #333c4e;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 8px 0;
+    background-color: #f4f5f8;
+    border: 1px solid #d1d7db;
+    border-bottom: none;
+    -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    cursor: default;
+}
+
+.measurement-chart__content__body__table table thead th:first-child {
+    border-color: #ffffff;
+    background-color: transparent;
+}
+
+.measurement-chart__content__body__table table thead th:nth-child(2) {
+    -webkit-border-radius: 2px 0 0 0;
+    -moz-border-radius: 2px 0 0 0;
+    -ms-border-radius: 2px 0 0 0;
+    -o-border-radius: 2px 0 0 0;
+    border-radius: 2px 0 0 0;
+}
+
+.measurement-chart__content__body__table table thead th:last-child {
+    -webkit-border-radius: 0 2px 0 0;
+    -moz-border-radius: 0 2px 0 0;
+    -ms-border-radius: 0 2px 0 0;
+    -o-border-radius: 0 2px 0 0;
+    border-radius: 0 2px 0 0;
+}
+
+.measurement-chart__content__body__table table thead th:not(:last-child) {
+    border-right: none;
+}
+
+.measurement-chart__content__body__table table tbody td {
+    min-width: 55px;
+    font-size: 0.75em;
+    color: #959fAd;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 8px 0;
+    border: 1px solid #d1d7db;
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.measurement-chart__content__body__table table tbody td:first-of-type {
+    color: #333c4e;
+    background-color: #f4f5f8;
+    cursor: default;
+}
+
+.measurement-chart__content__body__table table tbody td:not(:last-child) {
+    border-right: none;
+}
+
+.measurement-chart__content__body__table table tbody tr:first-child td:first-child {
+    -webkit-border-radius: 2px 0 0 0;
+    -moz-border-radius: 2px 0 0 0;
+    -ms-border-radius: 2px 0 0 0;
+    -o-border-radius: 2px 0 0 0;
+    border-radius: 2px 0 0 0;
+}
+
+.measurement-chart__content__body__table table tbody tr:last-child td:first-child {
+    -webkit-border-radius: 0 0 0 2px;
+    -moz-border-radius: 0 0 0 2px;
+    -ms-border-radius: 0 0 0 2px;
+    -o-border-radius: 0 0 0 2px;
+    border-radius: 0 0 0 2px;
+}
+
+.measurement-chart__content__body__table table tbody tr:last-child td:last-child {
+    -webkit-border-radius: 0 0 2px 0;
+    -moz-border-radius: 0 0 2px 0;
+    -ms-border-radius: 0 0 2px 0;
+    -o-border-radius: 0 0 2px 0;
+    border-radius: 0 0 2px 0;
+}
+
+.measurement-chart__content__body__table table tbody tr:not(:last-child) td {
+    border-bottom: none;
+}
+
+.measurement-chart__content__body__table__legend {
+    width: 100%;
+    font-style: italic;
+    font-size: 0.75em;
+    color: #0f141a;
+    font-weight: 300;
+    text-align: right;
+    margin-top: 11px;
+}
+
+.measurement-chart__content__body__table__desc {
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-justify-content: space-between;
+    -webkit-box-pack: space-between;
+    -moz-justify-content: space-between;
+    -moz-flex-pack: space-between;
+    -ms-justify-content: space-between;
+    -ms-flex-pack: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between;
+
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    -o-align-items: center;
+    align-items: center;
+
+    width: 100%;
+    color: #959fad;
+    padding: 15px 10px;
+    margin-top: 15px;
+    background-color: #f4f5f8;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.measurement-chart__content__body__table__desc img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.measurement-chart__content__body__table__desc p {
+    font-size: 0.75em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.measurement-chart__content__body__table__chest,
+.measurement-chart__content__body__table__waist,
+.measurement-chart__content__body__table__hip,
+.measurement-chart__content__body__table__thigh {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.measurement-chart__content__body__table__chest img,
+.measurement-chart__content__body__table__waist img,
+.measurement-chart__content__body__table__hip img,
+.measurement-chart__content__body__table__thigh img {
+    height: 100%;
+}
+
+.measurement-chart__content__body__table__chest p,
+.measurement-chart__content__body__table__waist p,
+.measurement-chart__content__body__table__hip p,
+.measurement-chart__content__body__table__thigh p {
+    position: absolute;
+    bottom: 0;
+    font-size: 0.8em;
+    color: #eeeeee;
+    padding: 10px;
+    background-color: rgba(34, 42, 51, 0.8);
+}
+
+.measurement-chart__content__body__table__chest i,
+.measurement-chart__content__body__table__waist i,
+.measurement-chart__content__body__table__hip i,
+.measurement-chart__content__body__table__thigh i {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 1.5em;
+    color: #ffffff;
+    padding: 10px 15px;
+    background-color: rgba(34, 42, 51, 0.5);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: background-color 0.2s ease-in-out;
+    -moz-transition: background-color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out;
+    -o-transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.measurement-chart__content__body__table__chest i:hover,
+.measurement-chart__content__body__table__waist i:hover,
+.measurement-chart__content__body__table__hip i:hover,
+.measurement-chart__content__body__table__thigh i:hover {
+    background-color: #222A33;
+    cursor: pointer;
+}
+
+/* measurement chart => content => footer */
+.measurement-chart__content__footer {
+    padding: 5px 10px;
+    border-top: 1px solid #c9d3dd;
+}
+
+.measurement-chart__content__footer a,
+.measurement-chart__content__footer button {
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-justify-content: space-between;
+    -webkit-box-pack: space-between;
+    -moz-justify-content: space-between;
+    -moz-flex-pack: space-between;
+    -ms-justify-content: space-between;
+    -ms-flex-pack: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between;
+
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    -o-align-items: center;
+    align-items: center;
+
+    font-size: 0.8em;
+    color: #333c4e;
+    text-transform: uppercase;
+    border: 1px solid #c9d3dd;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+}
+
+.measurement-chart__content__footer a {
+    display: none;
+    text-decoration: none;
+    padding-right: 40px;
+    background-color: transparent;
+}
+
+.measurement-chart__content__footer button {
+    padding-right: 20px;
+    background-color: #f4f5f8;
+}
+
+.measurement-chart__content__footer a img,
+.measurement-chart__content__footer button img {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    margin-right: 40px;
+}
+
+.measurement-chart__content__footer button img {
+    background-color: #222a33;
+}
+
+.measurement-chart__content__footer a:hover,
+.measurement-chart__content__footer button:hover {
+    color: #222a33;
+    background-color: #e5edf4;
+}
+
+.measurement-chart__content__footer__virtual-taster {
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -moz-flex-pack: center;
+    -ms-justify-content: center;
+    -ms-flex-pack: center;
+    -o-justify-content: center;
+    justify-content: center;
+
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    -o-align-items: center;
+    align-items: center;
+}
+
+.measurement-chart__content__footer__virtual-taster p {
+    font-size: 0.75em;
+    color: #333C4E;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+/* open */
+.measurement-chart__open {
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: inline-flex;
+
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -moz-flex-pack: center;
+    -ms-justify-content: center;
+    -ms-flex-pack: center;
+    -o-justify-content: center;
+    justify-content: center;
+
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    -o-align-items: center;
+    align-items: center;
+
+    color: #222a33;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #f4f5f8;
+    border: 1px solid #e3e3e3;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-transition: background-color 0.2s ease-in-out;
+    -moz-transition: background-color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out;
+    -o-transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
+    outline: none;
+    cursor: pointer;
+}
+
+.measurement-chart__open:hover {
+    background-color: #e3e3e3;
+}
+
+.measurement-chart__open span {
+    font-size: 0.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.measurement-chart__open img {
+    margin-right: 10px;
+}
+
+/*550px*/
+@media (min-width: 34.375em) {
+    /*
+    MEASUREMENT CHART
+    */
+    .measurement-chart {
+        height: calc(100vh - 51px);
+    }
+
+    /* measurement chart => content => header */
+    .measurement-chart__content__header {
+        padding: 10px 10px 10px 25px;
+    }
+
+    .measurement-chart__content__header__logo {
+        width: 150px;
+    }
+
+    .measurement-chart__content__header__close {
+        width: 50px;
+        height: 50px;
+    }
+
+    .measurement-chart__content__header__close i {
+        font-size: 1.875em;
+    }
+
+    /* measurement chart => content => body */
+    .measurement-chart__content__body {
+        padding: 1px 25px;
+    }
+
+    .measurement-chart__content__body__table__title {
+        font-size: 1em;
+        margin-bottom: 35px;
+    }
+
+    .measurement-chart__content__body__table__desc img {
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+    }
+
+    .measurement-chart__content__body__table__desc p {
+        font-size: 0.875em;
+    }
+
+    /* measurement chart => content => footer */
+    .measurement-chart__content__footer {
+        padding: 10px 25px;
+    }
+
+    .measurement-chart__content__footer button {
+        padding-right: 40px;
+    }
+
+    .measurement-chart__content__footer button img {
+        margin-right: 40px;
+    }
+}
+
+/*768px*/
+@media (min-width: 48em) {
+    /*
+    MEASUREMENT CHART
+    */
+    /* measurement chart => content => body */
+    .measurement-chart__content__body__image {
+        display: block;
+
+        -webkit-flex-basis: 40%;
+        -moz-flex-basis: 40%;
+        -ms-flex-basis: 40%;
+        -o-flex-basis: 40%;
+        flex-basis: 40%;
+    }
+
+    .measurement-chart__content__body__table {
+        -webkit-flex-basis: 60%;
+        -moz-flex-basis: 60%;
+        -ms-flex-basis: 60%;
+        -o-flex-basis: 60%;
+        flex-basis: 60%;
+
+        padding-left: 25px;
+    }
+
+    .measurement-chart__content__body__table__title {
+        margin-bottom: 50px;
+    }
+
+    /* measurement chart => content => footer */
+    .measurement-chart__content__footer {
+        -webkit-display: -webkit-box;
+        -webkit-display: -webkit-flex;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-justify-content: space-between;
+        -webkit-box-pack: space-between;
+        -moz-justify-content: space-between;
+        -moz-flex-pack: space-between;
+        -ms-justify-content: space-between;
+        -ms-flex-pack: space-between;
+        -o-justify-content: space-between;
+        justify-content: space-between;
+
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        -ms-flex-align: center;
+        -o-align-items: center;
+        align-items: center;
+    }
+
+    .measurement-chart__content__footer a {
+        -webkit-display: -webkit-box;
+        -webkit-display: -webkit-flex;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        padding-right: 20px;
+    }
+
+    .measurement-chart__content__footer button {
+        padding-right: 20px;
+    }
+
+    .measurement-chart__content__footer a img,
+    .measurement-chart__content__footer button img {
+        margin-right: 20px;
+    }
+
+    .measurement-chart__content__footer__virtual-taster {
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        -o-flex-direction: row;
+        flex-direction: row;
+
+        -webkit-justify-content: space-between;
+        -webkit-box-pack: space-between;
+        -moz-justify-content: space-between;
+        -moz-flex-pack: space-between;
+        -ms-justify-content: space-between;
+        -ms-flex-pack: space-between;
+        -o-justify-content: space-between;
+        justify-content: space-between;
+    }
+
+    .measurement-chart__content__footer__virtual-taster p {
+        width: 250px;
+        font-size: 0.9375em;
+        text-align: right;
+        margin: 0 50px 0 0;
+    }
+}
+
+/*992px*/
+@media (min-width: 62em) {
+    /*
+    MEASUREMENT CHART
+    */
+    .measurement-chart {
+        height: 100vh;
+        top: 0;
+        left: 0;
+    }
+
+    /* measurement chart => content => header */
+    .measurement-chart__content__header {
+        padding: 10px 10px 10px 50px;
+    }
+
+    /* measurement chart => content => body */
+    .measurement-chart__content__body {
+        padding: 1px 50px;
+    }
+
+    /* measurement chart => content => footer */
+    .measurement-chart__content__footer {
+        padding: 20px 50px;
+    }
+
+    .measurement-chart__content__footer a {
+        padding-right: 40px;
+    }
+
+    .measurement-chart__content__footer button {
+        padding-right: 40px;
+    }
+
+    .measurement-chart__content__footer a img,
+    .measurement-chart__content__footer button img {
+        margin-right: 40px;
+    }
+}

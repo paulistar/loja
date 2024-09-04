@@ -1,0 +1,16 @@
+{
+    "name": "dev-alisson/moip",
+    "description": "Server-side integration with Moip v2 APIs",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dev-alisson",
+            "email": "alissonpereira1993@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "moip/moip-sdk-php": "^3.1"
+    }
+}

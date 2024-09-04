@@ -1,0 +1,44 @@
+/*
+FOOTER
+*/
+.footer{background-color: #f1f1f1;}
+.footer .content{padding: 20px 0;}
+.footer header h1{position: absolute; top: -9999px; left: -9999px; text-indent: -9999px;}
+
+/*links*/
+.footer_links h1{font-size: 0.9375em; color: var(--color-background-one); font-weight: bold; margin-bottom: 20px;}
+.footer_links ul li{margin: 5px 0;}
+.footer_links ul li a{font-size: 0.8125em; color: #48525b; text-decoration: none;}
+.footer_links ul li a:hover{color: var(--color-background-one); text-decoration: underline;}
+
+/*contact*/
+.footer_contact{padding-left: 70px;}
+.footer_contact_content{background-color: #ffffff; padding: 20px 20px 20px 40px;}
+
+.footer_contact h1{font-size: 1.125em; color: var(--color-background-one); font-weight: bold; margin-bottom: 5px;}
+.footer_contact span{font-size: 0.8125em; color: #51b3c2; font-weight: bold;}
+.footer_contact .footer_contact_whatsapp{font-size: 1.875em; color: #292725; font-weight: 600; text-transform: uppercase; margin-top: 10px;}
+.footer_contact .footer_contact_suport{margin: 10px 0; line-height: 15px;}
+.footer_contact .footer_contact_suport span{font-size: 0.75em; color: #48525b; font-weight: normal;}
+.footer_contact .footer_contact_suport span span{font-size: 1.085em; color: #51b3c2; font-weight: bold;}
+
+/*about*/
+.footer_about{vertical-align: bottom;}
+.footer_about .footer_about_company{width: 70%;}
+.footer_about .footer_about_company a{display: inline-block; margin-bottom: 20px;}
+.footer_about .footer_about_company p{font-size: 0.8125em; color: #48525b; margin-bottom: 10px; text-align: justify;}
+.footer_about .footer_about_company span{font-size: 0.8125em; color: #48525b; font-weight: bold;}
+
+.footer_about .footer_about_social{width: 30%; text-align: right; vertical-align: bottom;}
+.footer_about .footer_about_social a{text-decoration: none;}
+.footer_about .footer_about_social a i{width: 47px; height: 47px; font-size: 1.875em; color: var(--color-background-one); text-align: center; padding: 7px 0; border: 2px solid; margin: 10px 5px;}
+
+/*payments and security*/
+.footer_payments_and_security{padding-left: 70px;}
+.footer_payments_and_security_content{background-color: #ffffff; padding: 20px 20px 20px 40px;}
+.footer_payments_and_security_content article:not(:last-child){margin-bottom: 20px;}
+.footer_payments_and_security_content h1{font-size: 1.125em; color: var(--color-background-one); font-weight: bold; margin-bottom: 15px;}
+
+/*copy*/
+.footer .footer_copy{text-align: center; background-color: #ffffff;}
+.footer .footer_copy p{font-size: 0.7em; color: #696969;}
